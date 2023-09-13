@@ -1,0 +1,41 @@
+# exibe os comandos SQL
+#MYSQL
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/vehicle_rental?useTimezone=true&serverTimezone=UTC
+    password: sysadm
+    username: root
+#exibe comando sql     
+  jpa:
+    show-sql : true
+    generate-ddl : true
+    properties:
+      hibernate:
+        show_sql: true 
+        use_sql_comments: true
+        format_sql: true
+        type_sql: true
+        ddl-auto: updates     
+mail:
+  sender: teste.aluguel.2020@gmail.com
+  smtp:
+    host: smtp.gmail.com
+    port: 587
+    username: teste.aluguel.2020@gmail.com
+    password: 123456789q@
+    auth: true
+    connectiontimeout: 10
+    starttls:
+        enable: true
+  transport: 
+    protocol: smtp
+feign:
+  url-basic: http://fipeapi.appspot.com/api/1/carros
+  client:
+    config:
+      default:
+        connectTimeout: 5
+        readTimeout: 5
+        loggerLevel: basic
